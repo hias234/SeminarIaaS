@@ -4,12 +4,11 @@
 \section{Virtualization}
 The most important concept of cloud computing and therefore also for IaaS systems is virtualization. Nowadays every cloud computing system is virtualized. This means that all the user's cloud computing applications run in virtual machines. In the case of IaaS systems the user buys a VM and can install whatever system he likes on it \cite{Arzuaga_2010}. 
 
-Virtualization brings many advantages. A lot of crucial concepts of cloud computing are a lot easier with virtualized systems. On example is load balancing: Virtual machines can be copied and can be migrated on other physical machines without any problems. See Section \ref{sec:load_balancing}.
-\cite{Arzuaga_2010}
+Virtualization brings many advantages. A lot of crucial concepts of cloud computing are a lot easier with virtualized systems. On example is load balancing: Virtual machines can be copied and can be migrated on other physical machines without any problems. See Section \ref{sec:load_balancing} \cite{Arzuaga_2010}.
 
 \section{Load Balancing}
 \label{sec:load_balancing}
-
+The applications on cloud computing systems run in VMs, and these applications run in physical machines. Furthermore, there is a huge variation on the load on the applications, therefore if there run too many applications (or VMs) on one physical machine it may gets overloaded. This is why one needs load balancing. Load balancing should avoid that the physical machines have to handle more resources than they can offer. These resources can be CPU, RAM or storage space \cite{Chen_2014}. 
 
 
 \section{Resilience Planning}
