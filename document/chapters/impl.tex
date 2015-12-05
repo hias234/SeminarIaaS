@@ -29,6 +29,12 @@ Other algorithms are based on a "proactive" approach. In these algorithms the ph
 \section{Backup Strategies}
 
 \section{Monitoring}
-Monitoring is an essential part for deployed systems for both dedicated hardware structures and cloud computing systems. It enables to discover and analyze failure, bad configuration, performance and many other issues that are important parts of software maintenance. Cloud computing systems are made for scaling and elasticity. But these two characteristics make it hard to monitor cloud computing systems as monitoring of high scaling systems requires to collect, store and analyze a lot of data, which can be computationally highly expensive and the high elasticity puts an extra challenge as the whole environment can change in a very short period of time.
+Monitoring is an essential part for deployed systems for both,  dedicated hardware structures and cloud computing systems. It enables to discover and analyze failure, bad configuration, performance bottle necks and many other issues that are important parts of software maintenance. Cloud computing systems are made to be highly scaleable and elastic. But these two characteristics make it hard to monitor cloud computing systems as monitoring of high scaling systems requires to collect, store and analyze a lot of data in real time, which can be computationally highly expensive. Furthermore, the high elasticity shows an extra challenge, as the whole environment can change in a very short period of time in modern clouds \cite{Ward_2014}.
 
-\cite{Ward_2014}
+\subsection{Common Architectures}
+The most important architectures that are typical for monitoring distributed systems are:
+\begin{itemize}
+	\item Flat Pull Model: A central server polls all the machines he should monitor according to a schedule when machines join and leave.
+	\item Hierarchical Pull Model: Monitoring servers poll a subset of all the servers which should be monitored. A central server then polls the monitoring servers.
+	\item Hierarchical Push Model: The server themselves push information to a monitoring server which is assigned to them and the monitoring servers collect that information from their machines and push it to a central server.
+\end{itemize}
