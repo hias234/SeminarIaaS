@@ -7,20 +7,20 @@ The problem of this approach is, that if the system runs on average work load, t
 
 \begin{figure}
 	\centering
-		\includegraphics[width=0.75\textwidth]{dedicated_hardware_utilization}
+		\includegraphics{dedicated_hardware_utilization}
 	\caption{Dedicated Hardware Model - Utilization Waste \cite{Gajbhiye_2014}}
 	\label{fig:dedicated_hardware_utilization}
 \end{figure}
 
-In cloud computing this waste of resources can be prevented by dynamically assigning resources when needed. For example, if the cloud computing system identifies that there is an overload, it can just add another virtual machine which can also handle requests. Later if there is less workload this VM can be shutdown and the available resources can be used for other services. Figure \ref{fig:cloud_computing_utilization} shows the dynamic resource allocation of cloud computing \cite{Gajbhiye_2014}.
+In cloud computing this waste of resources can be prevented by dynamically assigning resources when needed. For example, if the cloud computing system identifies that there is an overload, it can just add another virtual machine which can also handle requests. Later if there is less workload this VM can be shutdown and the available resources can be used for other services. Figure \ref{fig:cloud_computing_utilization} shows the dynamic resource allocation of cloud computing. As you can see the changing resource need is handled in real time in cloud computing environments and therefore the resource utilization is being increased \cite{Gajbhiye_2014}.
 
 \begin{figure}
 	\centering
-		\includegraphics[width=0.75\textwidth]{cloud_computing_utilization}
+		\includegraphics{cloud_computing_utilization}
 	\caption{Cloud Computing Model - Dynamic Resources \cite{Gajbhiye_2014}}
 	\label{fig:cloud_computing_utilization}
 \end{figure}
 
-Another advantage is, that the cloud computing user does not have to care about backing up data, load balancing and resilience planning and still has highly scale-able and highly available applications.
+Another advantage is, that the cloud computing user does not have to care about backing up data, load balancing and resilience planning and still has highly scale-able and highly available applications. Detailed information about the technical details are described in chapter \label{chap:implementation}. 
 
-Probably the only disadvantage is, that you have to fully trust the cloud computing provider, because every system acts like a black box. This means that the user does not know where the applications and data are stored and how they are protected against unauthorized access. So for high sensitive data, (e.g. online banking systems) cloud computing is obviously not a good choice.
+Probably the only disadvantage of hosting applications in the cloud  is, that you have to fully trust the cloud computing provider, because every system acts like a black box. This means that the user does not know where the applications and data are stored and how they are protected against unauthorized access. The data can be distributed in many data centers in many countries to enhance scalability and availability. For high sensitive data, (e.g. online banking systems) cloud computing with a public provider is obviously not a good choice.
