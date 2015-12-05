@@ -33,8 +33,13 @@ Monitoring is an essential part for deployed systems for both,  dedicated hardwa
 
 \subsection{Common Architectures}
 The most important architectures that are typical for monitoring distributed systems are:
+
 \begin{itemize}
 	\item Flat Pull Model: A central server polls all the machines he should monitor according to a schedule when machines join and leave.
 	\item Hierarchical Pull Model: Monitoring servers poll a subset of all the servers which should be monitored. A central server then polls the monitoring servers.
-	\item Hierarchical Push Model: The server themselves push information to a monitoring server which is assigned to them and the monitoring servers collect that information from their machines and push it to a central server.
+	\item Hierarchical Push Model: The server themselves push information to a monitoring server which is assigned to them and the monitoring servers collect that information from their machines and push it to a central server \cite{Ward_2014}.
 \end{itemize}
+
+However, the just mentioned models for monitoring are modeled for grid and cluster computing. They are not always optimal for cloud computing systems as virtual machines can dynamically be added and removed and this creates the need for other approaches \cite{Ward_2014, He_2010}. 
+
+In 2010, Huang \cite{He_2010} proposed a monitoring system he called "Push and Pull", which should combine the advantages of the push and pull model. In current pull systems, the consumers pull information from the producers in a certain interval. This approach is efficient but lacks in consistency. If the interval is too big, data is lost, but if the interval is too small it is inefficient. In push systems on the other hand producers tell the consumers changes whenever the changes are greater than a threshold. This can produce good performance depending on the threshold and all data changes are monitored, but if the threshold is too small, too much information is transmitted and this leads to inefficiency. 
