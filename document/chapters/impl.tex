@@ -39,6 +39,26 @@ To make an IaaS cloud infrastructure resilient geographic distribution of data c
 During resilience planning you first have to identify which risks you want to consider and how to set the constraints for your service level agreement. These results are the basis for modeling the infrastructure distribution. Important tasks are investigating the underlying network and connections to identify so called shared risk groups (SRGs) which suffer in case of a specific failure. With this knowledge you can decide which mechanisms should be taken. Before any recovery can be started, failures have to be detected which by periodic heartbeats or network alarms of infrastructure components. After that a healthy component starts running the affected service and traffic must be redirected via networking reconfiguration subsequently to prevent further requests to the unhealthy instance. \cite{Resilience_2014} How these backup strategies can look like will be explained in more detail in the following section. 
 
 \section{Backup Strategies}
+A backup is a copy of important files and are usually made to reduce the chance of data-loss.
+
+Backups don't a high priority for the average user and most of them don't even back up their data 
+\cite{stat_backup} but the loss of data is very costly and time-intensive if you don't take precautions in form of a backup.
+
+One Backup strategy would be the „3-2-1 rule“ which is widely known. It describes a basic and simple strategy and avoids a single point of failure.
+The following principles are the core strategy:
+\begin{itemize}
+	\itemsep0em 
+	\item Have at least three copies of data
+	\item In two different formats
+	\item with one of those copies off-site
+\end{itemize}
+The three copies are including the one you already use, so you would have 2 backups, stored on 2 different media types(e.g. hard drive and DVD) in a different format and one of these have to be off-site. That means it should be stored somewhere else than the other copy(e.g. Out of the house).
+
+This prevents single point of failure: when one hard drive is damaged, you have a second copy. If the format is corrupted, you have another backup in a different format. If something happens to the location, you have one backup off-site, since one event can't destroy both copies.
+This strategy doesn't prevent data-loss, but it prevents most of the cases.
+\cite{micro_2013}
+IaaS comes here into play in multiple parts: You can store backups online to have them off-site. You don't have to buy extra hardware and store them somewhere else. You can store your backups on different cloud providers to prevent data-loss with one. Many cloud providers offer software to automatically backup your data to their cloud so there is less work for the user in that regard. In addition, cloud providers have big datacenters and have measures against data-loss, so it is safer to store to store one copy there.
+\cite{google_centers}
 
 \section{Monitoring}
 Monitoring is an essential part for deployed systems for both,  dedicated hardware structures and cloud computing systems. It enables to discover and analyze failure, bad configuration, performance bottle necks and many other issues that are important parts of software maintenance. Cloud computing systems are made to be highly scaleable and elastic. But these two characteristics make it hard to monitor cloud computing systems as monitoring of high scaling systems requires to collect, store and analyze a lot of data in real time, which can be computationally highly expensive. Furthermore, the high elasticity shows an extra challenge, as the whole environment can change in a very short period of time in modern clouds \cite{Ward_2014}.
