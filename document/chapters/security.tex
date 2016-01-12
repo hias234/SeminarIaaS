@@ -1,0 +1,54 @@
+\chapter{Security}
+\label{chap:security}
+Security is very important for sensitive data, especially when hosted somewhere on the internet.
+This requires strong security but also practicable authentication. Common methods include:
+\begin{itemize}
+\item Simple authentication
+\item Multi factor authentication
+\item Certificates
+\end{itemize}
+
+In this chapter, we will first take a look at different authentication techniques. After that, we will compare the advantages and disadvantages in security in the cloud.
+
+\section{Authentication}
+
+\subsection{Simple authentication}
+This method only requires a username and password and is really simple and widely used. However, it may be possible to find out your password, and if that happens, you don't have much chance to stop the intruder and lose access at least for some time.
+
+\subsection{Multi Factor Authentication}
+Multi factor authentication requires another factor of authentication in addition to your password. This could e.g. be a trusted device. Since many people use a smartphone these days, this could be a potential second factor to use for MFA.
+This authentication can be either a call or a SMS sent to your phone with a code you have to enter in addition to your password. This prevents intruders to gain access when they find out your password and is much more secure than using just a password. 
+Another device would be a TOTP (Time-base One-Time Password) like a Yubikey. These generate passwords which only can be used once and are only valid for a limited time. 
+\cite{cloud_acc}
+
+\subsection{Certificates}
+Another way of authentication would be through certificates. These use asymetric cryptography where your opponent can use your public key to verify your identity and vice versa. These certificates can either be created by yourself (self-signed) or by a Certificate Authority. The certificate is then uploaded to the webserver and configure it.
+
+You can also create certificates for the user and specify if the connection is allowed by checking his identity through his certificate. 
+\cite{ssh_supp}
+
+\section{Advantages and Disadvantages in Security}
+
+
+\subsection{Advantages}
+One advantage of using IaaS is that the Security management is much more professional since the providers Job is only to secure the datacenter.
+In addition, since it has a much bigger scale than hosting your own server, the provider uses much more redundancy and physical security than a „normal“ datacenter. This provides a better security against data-loss both on the logical(read/write error on the hard drive) and the physical(fire, intruders) level with a cheaper price overall.
+\cite{sonn_pre}
+
+\subsection{Issues}
+IaaS does provide nice advantages compared to using your own datacenter but it also has some issues, which will be discussed in this chapter.
+
+\subsubsection{Trust}
+One issue with IaaS could be trust. Any provider, be it IaaS, PaaS or SaaS, could have access to sensitive data since it is stored on their hardware. Insider access can be done by current or even former employees if security policies aren't enforced all the time. This can include regular password switching, requiring Multi factor authentication for employees etc.
+Another issue can be the monitoring of these services. If you migrate to cloud services, the responsibility for securing these systems where the customers data is operating on, goes to the provider. This can cause a big risk for the company if the cloud provider does provide sufficient security on their systems.
+
+\subsubsection{Infrastructure}
+A issue, which comes together with trust, is the infrastructure. Having your sensitive data outsourced on a big cloud provider makes you a bigger target. They may not target a single company which is using their services specifically, but since they target the provider, they may also get access to a company's sensitive data. 
+The main focus of protection is mostly on the data where the customers are working on but there can be other valuable data to get stolen as well. For example payment information or user accounts of the services. 
+But not only server-side protection is important, client-side protection is important as well. The Server is accessible on the internet and not avaliable on the intraweb, so you have to have a more secure connection to your server.
+\cite{hooks}
+
+\subsubsection{Avaliability}
+Another issue is the avaliability. For almost all companies, having their services not avaliable to them, especially for a longer period of time, is a nightmare. It could cost them enormous amounts of money. One possibility are outages by the provider experiencing DDoS or other attacks. As said before, since the provider is a bigger target, attacks on the provider may also affect you. Another avaliability issue would be the financial situation of the provider. If the provider goes  suddently bankrupt and shuts down it's services, you have to migrate to another provider. If it happens suddenly, you could lose important or sensitive data. 
+Legal issues can affect avaliability as well. In 2009, the FBI raided datacenters in Texas and confiscates hundreds of servers. \cite{fbi_raid} This can lead to data loss and giving sensitive data to unauthorized people. 
+
