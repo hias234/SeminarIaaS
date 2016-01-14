@@ -18,14 +18,14 @@ This method only requires a username and password and is really simple and widel
 \subsection{Multi Factor Authentication}
 Multi factor authentication requires another factor of authentication in addition to your password. This could e.g. be a trusted device. Since many people use a smartphone these days, this could be a potential second factor to use for MFA.
 This authentication can be either a call or a SMS sent to your phone with a code you have to enter in addition to your password. This prevents intruders to gain access when they find out your password and is much more secure than using just a password. 
-Another device would be a TOTP (Time-base One-Time Password) like a Yubikey. These generate passwords which only can be used once and are only valid for a limited time. 
-\cite{cloud_acc}
+Another device would be a TOTP (Time-base One-Time Password) like a Yubikey. These generate passwords which only can be used once and are only valid for a limited time \cite{cloud_acc}. 
+
 
 \subsection{Certificates}
 Another way of authentication would be through certificates. These use asymetric cryptography where your opponent can use your public key to verify your identity and vice versa. These certificates can either be created by yourself (self-signed) or by a Certificate Authority. The certificate is then uploaded to the webserver and configure it.
 
-You can also create certificates for the user and specify if the connection is allowed by checking his identity through his certificate. 
-\cite{ssh_supp}
+You can also create certificates for the user and specify if the connection is allowed by checking his identity through his certificate \cite{ssh_supp}. 
+
 
 \section{Advantages and Disadvantages in Security}
 
@@ -33,8 +33,8 @@ You can also create certificates for the user and specify if the connection is a
 \subsection{Advantages}
 \subsubsection{Easier Security Management and Maintenance}
 One advantage of using IaaS is that the Security management is much more professional since the providers Job is only to secure the datacenter.
-In addition, since it has a much bigger scale than hosting your own server, the provider uses much more redundancy and physical security than a „normal“ datacenter. This provides a better security against data-loss both on the logical(read/write error on the hard drive) and the physical(fire, intruders) level with a cheaper price overall.
-\cite{sonn_pre}
+In addition, since it has a much bigger scale than hosting your own server, the provider uses much more redundancy and physical security than a „normal“ datacenter. This provides a better security against data-loss both on the logical(read/write error on the hard drive) and the physical(fire, intruders) level with a cheaper price overall \cite{sonn_pre}.
+
 
 \subsubsection{Better trained personal}
 Many industries require certitifcations in information security and or privacy. These can be expensive for smaller companies who just manage a small amount of servers. Cloud vendors however often get their employees and their company certified to better train their employees and ensures more security overall. In addition, it demonstrates their knowledge and builds up trust to their customers.
@@ -49,8 +49,8 @@ Another issue can be the monitoring of these services. If you migrate to cloud s
 \subsubsection{Infrastructure}
 A issue, which comes together with trust, is the infrastructure. Having your sensitive data outsourced on a big cloud provider makes you a bigger target. They may not target a single company which is using their services specifically, but since they target the provider, they may also get access to a company's sensitive data. 
 The main focus of protection is mostly on the data where the customers are working on but there can be other valuable data to get stolen as well. For example payment information or user accounts of the services. 
-But not only server-side protection is important, client-side protection is important as well. The Server is accessible on the internet and not avaliable on the intraweb, so you have to have a more secure connection to your server.
-\cite{hooks}
+But not only server-side protection is important, client-side protection is important as well. The Server is accessible on the internet and not avaliable on the intraweb, so you have to have a more secure connection to your server \cite{hooks}.
+
 
 \subsubsection{Avaliability}
 Another issue is the avaliability. For almost all companies, having their services not avaliable to them, especially for a longer period of time, is a nightmare. It could cost them enormous amounts of money. One possibility are outages by the provider experiencing DDoS or other attacks. As said before, since the provider is a bigger target, attacks on the provider may also affect you. Another avaliability issue would be the financial situation of the provider. If the provider goes  suddently bankrupt and shuts down it's services, you have to migrate to another provider. If it happens suddenly, you could lose important or sensitive data. 
